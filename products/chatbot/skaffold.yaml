@@ -1,0 +1,38 @@
+# skaffold -f skaffold-chatbot.yaml dev -p preview
+apiVersion: skaffold/v4beta11
+kind: Config
+requires:
+  - configs: [ "services-chatbot" ]
+    path: ../../services/chatbot/skaffold.yaml
+metadata:
+  name: trash
+
+portForward:
+- resourceType: service
+  resourceName: chatbot-svc
+  port: 8000
+  address: 0.0.0.0
+
+profiles:
+- name: preview
+  activation:
+  - command: dev
+  manifests:
+    kustomize:
+      paths:
+      - overlays/preview/
+  deploy:
+    kubeContext: kind-chatbot
+    kubectl:
+      defaultNamespace: default
+  build:
+    local:
+      push: false
+      useBuildkit: true
+      concurrency: 64
+    artifacts:
+    - image: gcr.io/trash-362115/ngrok
+      context: .
+      docker:
+        dockerfile: images/ngrok/Dockerfile
+

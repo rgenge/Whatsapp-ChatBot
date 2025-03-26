@@ -1,0 +1,13 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: services-chatbot
+build:
+  local:
+    useBuildkit: true
+    concurrency: 64
+  artifacts:
+    - image: gcr.io/trash-362115/chatbot-svc
+      context: .
+      docker:
+        dockerfile: Dockerfile
