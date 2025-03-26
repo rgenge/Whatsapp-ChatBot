@@ -38,4 +38,4 @@ metadata:
   name: ngrok-secret
 type: Opaque
 data:
-  NGROK_AUTHTOKEN: MnVLaEtOeDVZRGVnMXFibkVMZGM2a0JVTUZwXzVqOTR1Yk5OZ2MyR0wxOVpSYnF6dQ==
+  NGROK_AUTHTOKEN:
