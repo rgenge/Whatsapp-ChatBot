@@ -7,3 +7,5 @@ htmlcov
 .cache
 .venv
 filelist.txt
+.env
+/app/.env

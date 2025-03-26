@@ -1,16 +1,5 @@
 # Chatbot
 
-## Contributing
-
-In https://github.com/worldsense/trash, you can click on "code" to get
-instructions on how to clone the code to your local machine or kickstart a
-codespace with the code. Among those, the recommended choice is to install the
-github cli [https://cli.github.com/] and grab a copy of the source code in your
-local machine.
-
-This Chatbot service is part of our monorepo, which defines multiple environments
-to streamline both development and production workflows.
-
 # container
 
 The only strictly required tools for this environment are docker and
