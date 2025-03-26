@@ -39,7 +39,7 @@ sharing private development results. Services within preview are shared.
 Note: For testing or sharing purposes, you might need ngrok to expose your
 local services to the internet, it is only needed due to security purposes.
 
-To start ngrok without fixed domain you can use this in compose.yaml:
+To start ngrok without fixed domain you can use this in ngrok.yaml:
 
 `args: - "http" - "chat-app:8000"`
 
@@ -49,7 +49,7 @@ assigned public domain with:
 `curl -s http://localhost:4040/api/tunnels | jq '.tunnels[0].public_url'`
 
 Fixing a Custom Domain: To use a fixed custom domain instead of a dynamic one,
-go to the ngrok console and acquire a domain. Then, update the compose.yaml
+go to the ngrok console and acquire a domain. Then, update the ngrok.yaml
 file to call ngrok with the fixed domain:
 
 `args: -"http" - "--url=your-ngrok-domain.ngrok-free.app" - "chat-app:8000"`
